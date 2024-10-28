@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="802.0" stylesheets="@../../CSS/TP4Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.gestionsuivimedical.MenuController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox prefHeight="80.0" prefWidth="600.0" styleClass="hbTitre" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblTitre" prefHeight="80.0" prefWidth="750.0" styleClass="lblTitre" text="Suivi médical">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefHeight="338.0" prefWidth="258.0" spacing="20.0" styleClass="vbExos" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="menuCreerVignette" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#menuClicked" prefHeight="38.0" prefWidth="258.0" style="-fx-text-fill: white;" styleClass="cmdExo" text="Créer vignette">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuCreerMedicament" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#menuClicked" prefHeight="38.0" prefWidth="258.0" style="-fx-text-fill: white;" styleClass="cmdExo" text="Créer médicament">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuPrescrire" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#menuClicked" prefHeight="38.0" prefWidth="257.0" style="-fx-text-fill: white;" styleClass="cmdExo" text="Prescrire">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menuStats" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#menuClicked" prefHeight="38.0" prefWidth="258.0" style="-fx-text-fill: white;" styleClass="cmdExo" text="Stats">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane prefHeight="286.0" prefWidth="421.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="apCreerVignette" prefHeight="320.0" prefWidth="450.0" styleClass="apExos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="81.0" layoutY="51.0" text="Nom de la vignette" />
+                        <Label layoutX="81.0" layoutY="106.0" text="Taux de remboursement" />
+                        <TextField fx:id="txtNomVignette" layoutX="259.0" layoutY="47.0" />
+                        <TextField fx:id="txtTauxRemboursement" layoutX="260.0" layoutY="102.0" />
+                        <Button fx:id="btnCreerVignette" layoutX="81.0" layoutY="171.0" mnemonicParsing="false" onAction="#btnCreerVignetteClicked" prefHeight="26.0" prefWidth="330.0" text="Créer la vignette" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="apCreerMedicament" prefHeight="320.0" prefWidth="450.0" styleClass="apExos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="90.0" layoutY="66.0" text="Nom du médicament" />
+                        <Label layoutX="90.0" layoutY="121.0" text="Prix du médicament" />
+                        <Label layoutX="90.0" layoutY="184.0" text="Couleur vignette" />
+                        <TextField fx:id="txtNomMedicament" layoutX="251.0" layoutY="62.0" />
+                        <TextField fx:id="txtPrixMedicament" layoutX="252.0" layoutY="117.0" />
+                        <ComboBox fx:id="cboVignettes" layoutX="251.0" layoutY="180.0" prefWidth="150.0" />
+                        <Button fx:id="btnCreerMedicament" layoutX="90.0" layoutY="249.0" mnemonicParsing="false" onAction="#btnCreerMedicamentClicked" prefHeight="26.0" prefWidth="312.0" text="Créer médicament" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="apPrescrire" prefHeight="320.0" prefWidth="450.0" styleClass="apExos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="25.0" text="Date consultation" />
+                        <DatePicker fx:id="dpDate" layoutX="159.0" layoutY="21.0" prefHeight="26.0" prefWidth="318.0" AnchorPane.rightAnchor="15.0" />
+                        <Label layoutX="24.0" layoutY="66.0" text="Patient" />
+                        <Label layoutX="287.0" layoutY="65.0" text="Médecin" />
+                        <ComboBox fx:id="cboPatients" layoutX="85.0" layoutY="61.0" prefHeight="26.0" prefWidth="118.0" AnchorPane.rightAnchor="288.6" />
+                        <ComboBox fx:id="cboMedecins" layoutX="358.0" layoutY="61.0" prefHeight="26.0" prefWidth="120.0" AnchorPane.rightAnchor="14.0" />
+                        <TableView fx:id="tvMedicaments" layoutX="24.0" layoutY="107.0" prefHeight="248.0" prefWidth="506.0">
+                          <columns>
+                            <TableColumn fx:id="tcNumeroMedicament" prefWidth="56.79998588562012" text="Numéro" />
+                            <TableColumn fx:id="tcNomMedicament" prefWidth="222.40003204345703" text="Nom" />
+                              <TableColumn fx:id="tcPrixMedicament" prefWidth="75.20001220703125" text="Prix" />
+                              <TableColumn fx:id="tcQuantiteMedicament" prefWidth="83.2000732421875" text="Quantité" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnPrescrire" layoutX="23.0" layoutY="365.0" mnemonicParsing="false" onAction="#btnPrescrireClicked" prefHeight="26.0" prefWidth="508.0" text="Prescrire" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="apStats" prefHeight="331.0" prefWidth="500.0" styleClass="apExos" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <BarChart fx:id="graph" layoutX="8.0" layoutY="7.0" prefHeight="402.0" prefWidth="526.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children></AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
